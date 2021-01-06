@@ -97,8 +97,12 @@ nmap <leader>+ <Plug>AirlineSelectNextTab
 nmap <Leader><Left> :bp
 nmap <Leader><Right> :bn
 
+" Sometimes you type :W or :Q instead of :w & :q
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
+
+" When fixing text wrap, don't insert double space after periods
+set nojoinspaces
 
 set mouse=
 set ttymouse=
